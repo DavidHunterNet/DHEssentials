@@ -19,6 +19,8 @@ public class DHEssentials extends JavaPlugin {
 		
 		((CraftServer) this.getServer()).getCommandMap().register(DHEssentialsCommand.NAME, new DHEssentialsCommand(this));
 		
+		this.getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+		
 	}
 	
 	@Override
