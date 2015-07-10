@@ -3,7 +3,10 @@ package scot.davidhunter.DHEssentials;
 import java.util.logging.Level;
 
 import org.bukkit.ChatColor;
+import org.bukkit.craftbukkit.v1_8_R3.CraftServer;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import scot.davidhunter.DHEssentials.commands.DHEssentialsCommand;
 
 public class DHEssentials extends JavaPlugin {
 
@@ -13,6 +16,8 @@ public class DHEssentials extends JavaPlugin {
 	public void onEnable() {
 		
 		this.getLogger().log(Level.INFO, "Plugin Enabled!");
+		
+		((CraftServer) this.getServer()).getCommandMap().register(DHEssentialsCommand.NAME, new DHEssentialsCommand(this));
 		
 	}
 	
