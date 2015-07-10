@@ -6,17 +6,25 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class DHEssentials extends JavaPlugin {
 
+	private final String globalChatPrefix = "[DHEssentials] ";
+	
 	@Override
 	public void onEnable() {
 		
-		this.getServer().getLogger().log(Level.INFO, "Plugin Enabled!");
+		this.getServer().getLogger().log(Level.INFO, this.globalChatPrefix + "Plugin Enabled!");
 		
 	}
 	
 	@Override
 	public void onDisable() {
 		
-		this.getServer().getLogger().log(Level.INFO, "Plugin Disabled!");
+		this.getServer().getLogger().log(Level.INFO, this.globalChatPrefix + "Plugin Disabled!");
+		
+	}
+	
+	public String getGlobalChatPrefix() {
+		
+		return this.globalChatPrefix;
 		
 	}
 	
